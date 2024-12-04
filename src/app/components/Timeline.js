@@ -65,28 +65,44 @@ const Timeline = () => {
             </div>
 
             <div className="timeline">
-                <div className="timeline-item">
-                    <div className="year">2022</div>
-                    <div className="timeline-content">
-                        <h4>University</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div className="timeline-item">
-                    <div className="year">2023</div>
-                    <div className="timeline-content">
-                        <h4>Internship</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div className="timeline-item">
-                    <div className="year">2024</div>
-                    <div className="timeline-content">
-                        <h4>Job 1</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
+    <div className="timeline-item">
+        <div className="year">2026</div>
+        <div className="timeline-content">
+            <h4>University</h4>
+            <p>
+                COMSATS University Islamabad | Bachelor of Software Engineering
+                <br />
+                Currently pursuing a Bachelor's degree in Software Engineering with a CGPA of 3.73, focusing on developing strong programming and problem-solving skills.
+            </p>
+        </div>
+    </div>
+    <div className="timeline-item">
+        <div className="year">2022</div>
+        <div className="timeline-content">
+            <h4>College</h4>
+            <p>
+                Pak Kashmir Institute of Computer Sciences | ICS
+                <br />
+                Completed Intermediate studies with marks of 1037/1100, focusing on computer science subjects that solidified my technical foundation.
+            </p>
+        </div>
+    </div>
+    <div className="timeline-item">
+        <div className="year">2020</div>
+        <div className="timeline-content">
+            <h4>School</h4>
+            <p>
+                Pak Kashmir Institute of Computer Sciences | Matriculation
+                <br />
+                Achieved marks of 1024/1100, laying the groundwork for my future in technology and academic success.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
         </div>
     );
 }

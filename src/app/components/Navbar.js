@@ -1,7 +1,7 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-scroll';
-import { FaHome, FaUniversity, FaChartBar, FaBriefcase, FaCommentDots } from 'react-icons/fa';
+import { FaHome, FaUniversity, FaChartBar, FaBriefcase, FaCommentDots, FaRProject } from 'react-icons/fa';
 import './Navbar.css';
 
 function Navbar({ activeSection }) {
@@ -41,8 +41,8 @@ function Navbar({ activeSection }) {
             offset={-70}
             className={`navbar-link ${activeSection === 'projects' ? 'active' : ''}`}
           >
-            <FaChartBar className="icon" />
-            <span className="tooltip">Projects</span>
+            <FaBriefcase className="icon" />
+            <span className="tooltip">Applications</span>
           </Link>
         </li>
         <li className="navbar-item">
@@ -53,8 +53,8 @@ function Navbar({ activeSection }) {
             offset={-70}
             className={`navbar-link ${activeSection === 'work' ? 'active' : ''}`}
           >
-            <FaBriefcase className="icon" />
-            <span className="tooltip">Work</span>
+            <FaRProject className="icon" />
+            <span className="tooltip">Designs</span>
           </Link>
         </li>
         <li className="navbar-item">
@@ -66,7 +66,7 @@ function Navbar({ activeSection }) {
             className={`navbar-link ${activeSection === 'messages' ? 'active' : ''}`}
           >
             <FaCommentDots className="icon" />
-            <span className="tooltip">Messages</span>
+            <span className="tooltip">Contact</span>
           </Link>
         </li>
       </ul>

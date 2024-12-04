@@ -185,7 +185,7 @@ function Projects({isDesign}) {
     <div className={`projects-section ${isVisible ? 'fade-in' : ''}`} ref={sectionRef}>
       <div className="headings-container">
         <h2 className="section-heading-1">Latest</h2>
-        <h2 className="section-heading-2">{isDesign ? 'Designs' : 'Devs'}</h2>
+        <h2 className="section-heading-2">{isDesign ? 'Designs' : 'Applications'}</h2>
       </div>
       {!isDesign && (
         <div className="filter-container">
