@@ -95,11 +95,15 @@
   border-radius: 20px;
   transition: box-shadow 0.3s ease-in-out;
   flex: 0.2; /* Make buttons take equal width */
+  text-decoration: none;
+
 }
 
 .hire-btn {
   background-color: var(--primary-color);
   color: #000;
+  text-decoration: none;
+
 }
 
 .contact-btn {

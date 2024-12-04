@@ -27,8 +27,8 @@ function Popup({ isOpen, onClose }) {
                     <div className="popup-left">
                         <h2>About Me</h2>
                         <p>I’m Daud bin Nasar, the digital architect who turns imagination into innovation. I don’t just code apps—I craft experiences that resonate. With Flutter as my brush and the MERN stack as my canvas, I paint vibrant, intuitive software solutions that bring ideas to life. My passion lies in the perfect blend of creativity and precision, ensuring that every line of code is purposeful and every project tells a captivating story. If you’ve got a vision that needs a spark of ingenuity and a touch of magic, I’m here to turn your concepts into something unforgettable.</p>
-                        <button className="download-cv-btn">Download CV</button>
-                    </div>
+                        <a href="https://drive.google.com/file/d/1rFzcnNwTcGNaFIDoY51W2nGq3rNQC6bt/view?usp=drive_link" className="btn hire-btn" target="_blank" rel="noopener noreferrer">Download CV</a>
+                        </div>
                     <div className="popup-right">
                         <h2>Technical Skills</h2>
                         <div className="skill-bar">
