@@ -1,4 +1,4 @@
-'use client'; // Keep this for client-side rendering
+'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
@@ -17,6 +17,7 @@ const Element = dynamic(() => import('react-scroll').then((mod) => mod.Element),
 function Home() {
   const [activeSection, setActiveSection] = useState('home');
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   const homeRef = useRef(null);
   const educationRef = useRef(null);
@@ -25,7 +26,11 @@ function Home() {
   const messagesRef = useRef(null);
 
   useEffect(() => {
+    // Only run on client-side
+    setIsMounted(true);
+
     const handleScroll = () => {
+      // Ensure we're on the client side
       if (typeof window === 'undefined') return;
 
       const scrollPosition = window.scrollY;
@@ -45,21 +50,32 @@ function Home() {
         }))
         .sort((a, b) => a.top - b.top);
 
-      const currentSection = sortedSections.reduce((prev, current) => {
-        if (scrollPosition >= current.top - window.innerHeight * 0.3) {
-          return current;
-        }
-        return prev;
-      }, sortedSections[0]);
+      // Ensure we have sections before processing
+      if (sortedSections.length > 0) {
+        const currentSection = sortedSections.reduce((prev, current) => {
+          if (scrollPosition >= current.top - window.innerHeight * 0.3) {
+            return current;
+          }
+          return prev;
+        }, sortedSections[0]);
 
-      setActiveSection(currentSection.id);
+        setActiveSection(currentSection.id);
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
+    // Only add event listener on client-side
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, []); // Empty dependency array ensures this runs only once after mount
+
+  // Prevent rendering on server-side to avoid hydration mismatches
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="App">
