@@ -2,6 +2,9 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
+    console.log('GMAIL_USER:', process.env.GMAIL_USER);
+   console.log('GMAIL_PASS:', process.env.GMAIL_PASS);
+
     const { firstName, lastName, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
@@ -10,7 +13,11 @@ export default async function handler(req, res) {
         user: process.env.GMAIL_USER, 
         pass: process.env.GMAIL_PASS,  
       },
+      tls: {
+        rejectUnauthorized: false, 
+      },
     });
+    
 
     const mailOptions = {
       from: email,  
