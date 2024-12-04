@@ -1,11 +1,7 @@
-import emailjs from 'emailjs-com';
-import { init } from 'emailjs-com';
+import emailjs from '@emailjs/nodejs';
 
 export default async function handler(req, res) {
-  // Initialize EmailJS with user ID (critical step)
-  init('C22PWP2rI3WBsfJAT');
-
-  // CORS headers with more robust configuration
+  // CORS headers
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST,OPTIONS');
@@ -28,31 +24,38 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Parse JSON body (ensure body parsing middleware is set up)
+    // Parse JSON body
     const { firstName, lastName, email, message } = req.body;
-
-    console.log('Received request body:', req.body);
 
     // Validate input
     if (!firstName || !lastName || !email || !message) {
-      res.status(400).json({ error: 'Missing required fields' });
-      return;
+      return res.status(400).json({ error: 'Missing required fields' });
     }
 
     // Validate email format
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailRegex.test(email)) {
-      res.status(400).json({ error: 'Invalid email format' });
-      return;
+      return res.status(400).json({ error: 'Invalid email format' });
     }
 
-    // Send email via EmailJS
-    const response = await emailjs.send('service_azaq1hi', 'template_elc7ftf', {
+    // EmailJS configuration
+    const templateParams = {
       first_name: firstName,
       last_name: lastName,
       email: email,
       message: message,
-    });
+    };
+
+    // Send email
+    const response = await emailjs.send(
+      'service_azaq1hi',     // Service ID
+      'template_elc7ftf',    // Template ID
+      templateParams,
+      {
+        publicKey: 'C22PWP2rI3WBsfJAT',    // User ID / Public Key
+        privateKey: 'tv-OcNHlbcpz5kOHeCeDM', // Add this to your .env file
+      }
+    );
 
     // Respond with success
     res.status(200).json({ 
@@ -60,16 +63,14 @@ export default async function handler(req, res) {
       responseDetails: response 
     });
   } catch (error) {
-    console.error('Comprehensive error details:', {
-      errorMessage: error.message,
-      errorStack: error.stack,
-      errorName: error.name
+    console.error('Email sending error:', {
+      message: error.message,
+      stack: error.stack,
     });
 
     res.status(500).json({ 
       error: 'Failed to send email', 
-      details: error.message,
-      fullError: error
+      details: error.message 
     });
   }
 }

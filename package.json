@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "emailjs-com": "^3.2.0",
+    "@emailjs/nodejs": "^5.0.2",
     "lucide-react": "^0.464.0",
     "next": "^15.0.3",
     "react": "^18.3.1",
