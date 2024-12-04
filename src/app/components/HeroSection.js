@@ -1,11 +1,14 @@
+'use client'; // Add this at the top
+
 import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import { FaLinkedin, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
-import ProfileImage from '../images/dAY6.png'; // Import your image (use your own path)
+import ProfileImage from '../images/dAY6.png';
 import Popup from './sub-components/Popup';
 import Image from "next/image";
 
 function HeroSection({ setIsPopupOpen }) {
+    const [isMounted, setIsMounted] = useState(false);
     const roles = ['Web Developer', 'UI/UX Designer', 'Mobile App Developer'];
     const [text, setText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -14,28 +17,32 @@ function HeroSection({ setIsPopupOpen }) {
     const [showCursor, setShowCursor] = useState(true);
 
     const handlePopupOpen = () => {
-        setIsPopupOpen(true);  // Open popup
-    };
-
-    const handlePopupClose = () => {
-        setIsPopupOpen(false); // Close popup
+        setIsPopupOpen(true);
     };
 
     useEffect(() => {
+        // Ensure client-side rendering
+        setIsMounted(true);
+    }, []);
+
+    useEffect(() => {
+        // Only run typing animation on client-side
+        if (!isMounted) return;
+
         const handleTyping = () => {
             const i = loopNum % roles.length;
             const fullText = roles[i];
 
             if (isDeleting) {
                 setText((prevText) => fullText.substring(0, prevText.length - 1));
-                setTypingSpeed(40); // Speed up when deleting
+                setTypingSpeed(40);
             } else {
                 setText((prevText) => fullText.substring(0, prevText.length + 1));
-                setTypingSpeed(100); // Normal speed when typing
+                setTypingSpeed(100);
             }
 
             if (!isDeleting && text === fullText) {
-                setTimeout(() => setIsDeleting(true), 1000); // Pause before starting to delete
+                setTimeout(() => setIsDeleting(true), 1000);
             } else if (isDeleting && text === '') {
                 setIsDeleting(false);
                 setLoopNum(loopNum + 1);
@@ -45,16 +52,24 @@ function HeroSection({ setIsPopupOpen }) {
         const timer = setTimeout(handleTyping, typingSpeed);
 
         return () => clearTimeout(timer);
-    }, [text, isDeleting, typingSpeed, loopNum, roles]);
+    }, [text, isDeleting, typingSpeed, loopNum, roles, isMounted]);
 
     // Cursor blinking effect
     useEffect(() => {
+        // Only run cursor effect on client-side
+        if (!isMounted) return;
+
         const cursorBlink = setInterval(() => {
             setShowCursor((prev) => !prev);
-        }, 500); // Adjust the speed of the cursor blink
+        }, 500);
 
         return () => clearInterval(cursorBlink);
-    }, []);
+    }, [isMounted]);
+
+    // Prevent rendering on server
+    if (!isMounted) {
+        return null;
+    }
 
     return (
         <div className="hero-section">
@@ -66,7 +81,7 @@ function HeroSection({ setIsPopupOpen }) {
                     I'm a <span className="role">{text}<span className={`cursor ${showCursor ? 'show' : ''}`}>|</span></span>
                 </h2>
                 <p>
-                    I’m Daud bin Nasar, a developer adept at turning ideas into reality. With a passion for programming, I craft innovative software solutions with a creative touch.
+                    I'm Daud bin Nasar, a developer adept at turning ideas into reality. With a passion for programming, I craft innovative software solutions with a creative touch.
                 </p>
                 <div className="social-icons">
                     <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -88,7 +103,14 @@ function HeroSection({ setIsPopupOpen }) {
                 </div>
             </div>
             <div className="hero-image-container">
-            <Image src={ProfileImage} alt="Daud bin Nasar" className="profile-image" width={500} height={500} />
+                <Image 
+                    src={ProfileImage} 
+                    alt="Daud bin Nasar" 
+                    className="profile-image" 
+                    width={500} 
+                    height={500} 
+                    priority // Added to ensure early loading
+                />
             </div>
         </div>
     );
