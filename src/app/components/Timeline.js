@@ -1,34 +1,20 @@
-'use client'; // Add this at the top
-
 import React, { useState, useRef, useEffect } from 'react';
 import './Timeline.css';
 
 const Timeline = () => {
     const sectionRef = useRef(null);
     const [isSectionVisible, setIsSectionVisible] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
 
     // Lock horizontal scroll function
     const lockHorizontalScroll = () => {
-        if (typeof document !== 'undefined') {
-            document.body.classList.add('no-horizontal-scroll');
-        }
     };
 
     // Unlock horizontal scroll function
     const unlockHorizontalScroll = () => {
-        if (typeof document !== 'undefined') {
-            document.body.classList.remove('no-horizontal-scroll');
-        }
+        document.body.classList.remove('no-horizontal-scroll');
     };
 
     useEffect(() => {
-        // Only run on client-side
-        setIsMounted(true);
-
-        // Ensure we're in a browser environment
-        if (typeof window === 'undefined' || typeof document === 'undefined') return;
-
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
@@ -52,35 +38,24 @@ const Timeline = () => {
     }, []);
 
     useEffect(() => {
-        // Only run on client-side and when section is visible
-        if (!isMounted || typeof document === 'undefined') return;
-
         if (isSectionVisible) {
             // Lock horizontal scrolling
             lockHorizontalScroll();
 
             // Sequentially show each timeline item with a delay
             const items = document.querySelectorAll('.timeline-item');
-            const animationPromises = Array.from(items).map((item, index) => {
-                return new Promise((resolve) => {
-                    setTimeout(() => {
-                        item.classList.add('show');
-                        resolve();
-                    }, index * 500);
-                });
-            });
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('show');
 
-            // Wait for all animations to complete before unlocking scroll
-            Promise.all(animationPromises).then(() => {
-                setTimeout(unlockHorizontalScroll, 500);
+                    // Check if all items have been animated, then unlock horizontal scroll
+                    if (index === items.length - 1) {
+                        setTimeout(unlockHorizontalScroll, 500); // Delay to ensure the last item animation completes
+                    }
+                }, index * 500); // Adjust delay as needed
             });
         }
-    }, [isSectionVisible, isMounted]);
-
-    // Prevent rendering on server
-    if (!isMounted) {
-        return null;
-    }
+    }, [isSectionVisible]);
 
     return (
         <div className={`timeline-section ${isSectionVisible ? 'fade-in' : ''}`} ref={sectionRef}>
