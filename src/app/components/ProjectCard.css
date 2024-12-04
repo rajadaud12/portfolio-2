@@ -1,0 +1,134 @@
+.project-card {
+  flex: 0 1 calc(50% - 15px); /* 50% width minus half of the gap */
+  min-width: 280px;
+  max-width: calc(50% - 15px);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  display: block;
+}
+
+.card-inner {
+  background: var(--input-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-inner:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-container {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.card-image {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 250px;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-inner:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.card-content h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.card-content p {
+  color: #a0a0a0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0.75rem 0 0 0;
+  align-self: start;
+  text-align: left; /* Ensure left alignment */
+}
+
+
+.card-row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.tech-stack {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.tech-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 1 calc(50% - 15px);
+    width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 1 100%; 
+    width: 100%; 
+    min-width: none; 
+    max-width: none; 
+  }
+
+  .card-image {
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width * 100) */
+    position: relative;
+  }
+
+  .card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
