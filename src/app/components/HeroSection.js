@@ -15,16 +15,19 @@ function HeroSection({ setIsPopupOpen }) {
     const [showCursor, setShowCursor] = useState(true);
 
     const handlePopupOpen = () => {
+        console.log('Popup open clicked');
         setIsPopupOpen(true);
     };
-
+    
     const handleScrollToContact = () => {
-        // Scroll to the bottom of the page
+        console.log('Contact scroll clicked');
         window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'smooth', // Smooth scrolling
+            top: document.body.scrollHeight,
+            behavior: 'smooth', 
         });
     };
+
+    
 
     useEffect(() => {
         // Ensure client-side rendering

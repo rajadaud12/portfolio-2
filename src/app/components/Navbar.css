@@ -1,6 +1,6 @@
 .nav-container {
     position: fixed;
-    top: 50%; /* For desktop view */
+    top: 50%; 
     left: 20px;
     transform: translateY(-50%);
     z-index: 10;
@@ -11,7 +11,7 @@
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);    
     display: flex;
-    flex-direction: column; /* Default column layout */
+    flex-direction: column;
     align-items: center;
     padding: 20px 10px;
     border-radius: 50px;
@@ -21,7 +21,7 @@
 .navbar-links {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Default column layout */
+    flex-direction: column; 
     align-items: center;
     padding: 0;
     margin: 0;
@@ -89,7 +89,8 @@
     .nav-container {
         display: flex;
         position: fixed;
-        bottom: 20px;
+        top: 90%;
+        height: 50px;
         left: 50%;
         transform: translateX(-50%);
         width: 100%; /* Allow better responsiveness */

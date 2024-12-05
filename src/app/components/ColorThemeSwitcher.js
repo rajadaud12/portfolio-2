@@ -46,13 +46,24 @@ const ColorThemeSwitcher = () => {
   return (
     <div className="color-theme-switcher">
       {/* Use Next.js Image component */}
-      <Image
-        src="/images/Logo.svg" // Assuming the logo is in the public folder
-        alt="Logo"
-        width={100} // Adjust width as needed
-        height={100} // Adjust height as needed
-        className="nameLogo"
-      />
+      <div className="nameLogo" style={{color: themes.find(t => t.name === currentTheme).primary}}>
+        <svg 
+          width="7356" 
+          height="11978" 
+          viewBox="0 0 7356 11978" 
+          fill="currentColor" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="dynamic-logo"
+        >
+          <path d="M43 8100V3876H1915V8100H43Z" stroke="currentColor" strokeOpacity="0.4" strokeWidth="30"/>
+          <path d="M30 69V3493H1886V1765L30 69Z" fill="currentColor"/>
+          <path d="M15 3493V3508H30H1886H1901V3493V1765V1758.39L1896.12 1753.93L40.1186 57.9269L15 34.9737V69V3493Z" stroke="currentColor" strokeOpacity="0.4" strokeWidth="30"/>
+          <path d="M30 11909V8485H1886V10213L30 11909Z" fill="currentColor"/>
+          <path d="M15 8485V8470H30H1886H1901V8485V10213V10219.6L1896.12 10224.1L40.1186 11920.1L15 11943V11909V8485Z" stroke="currentColor" strokeOpacity="0.4" strokeWidth="30"/>
+          <path d="M4958 1797H2238V3557H4126L5534 5093V7013L4126 8389H2238V10117H4958L7326 7781V4101L4958 1797Z" fill="currentColor"/>
+          <path d="M2238 1782H2223V1797V3557V3572H2238H4119.4L5519 5098.83V7006.69L4119.89 8374H2238H2223V8389V10117V10132H2238H4958H4964.15L4968.53 10127.7L7336.53 7791.68L7341 7787.27V7781V4101V4094.67L7336.46 4090.25L4968.46 1786.25L4964.09 1782H4958H2238Z" stroke="currentColor" strokeOpacity="0.4" strokeWidth="30"/>
+        </svg>
+      </div>
       <button className="theme-toggle" onClick={toggleOverlay}>
         <FaPalette size={20} />
       </button>

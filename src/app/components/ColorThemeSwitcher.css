@@ -12,25 +12,17 @@
 .nameLogo {
   width: 40px;
   height: auto;
-  color: var(--primary-color); /* Set the color */
 }
 
-.nameLogo svg {
-  width: 100%; /* Ensure it scales well */
-  height: 100%; /* Ensure it scales well */
+.nameLogo .dynamic-logo {
+  width: 100%;
+  height: 100%;
 }
 
-.nameLogo path, .nameLogo rect {
-  fill: var(--primary-color) !important; /* Force the fill color from CSS */
-  stroke: var(--primary-color) !important; /* Ensure stroke is also changed */
+.nameLogo svg path {
+  fill: currentColor;
+  stroke: currentColor;
 }
-
-/* Ensuring inline SVG styles are overridden if any exist */
-.nameLogo svg * {
-  fill: var(--primary-color) !important;
-  stroke: var(--primary-color) !important;
-}
-
 
 .theme-toggle {
   background-color: var(--primary-color);
