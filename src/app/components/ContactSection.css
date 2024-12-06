@@ -490,6 +490,11 @@ textarea{
     display: flex;
     flex-direction: column;
   }
+  .form-group {
+    max-width: 90% !important;
+  
+  }
+  
 
 }
 
