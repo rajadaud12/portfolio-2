@@ -68,7 +68,6 @@
 .form-group {
   position: relative;
   margin-bottom: 24px;
-  max-width: 90%;
 }
 
 .form-group label {
@@ -304,13 +303,7 @@ textarea{
 
 /* Responsive Styles */
 @media (min-width: 640px) {
-  .contact-section {
-    padding: 120px 40px;
-  }
-  .contact-form-wrapper{
-    padding-right: 35px;
-  }
-
+  
   .form-row {
     grid-template-columns: 1fr 1fr;
   }
@@ -400,7 +393,6 @@ textarea{
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 16px;
   }
 
   .form-group input,
