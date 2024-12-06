@@ -68,6 +68,7 @@
 .form-group {
   position: relative;
   margin-bottom: 24px;
+
 }
 
 .form-group label {
@@ -84,6 +85,7 @@
 
 .form-group input,
 .form-group textarea {
+  backdrop-filter: blur(10px);
   width: 100%;
   padding: 16px;
   background: var(--input-bg);
