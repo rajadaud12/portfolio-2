@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
 import './ContactSection.css'
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const ContactSection = () => {
   // Form state to track input values
@@ -215,41 +216,46 @@ const handleSubmit = async (e) => {
             {/* Rest of the contact details remain the same */}
             <div className="contact-details">
               <div className="contact-info-header">
-                <h3>Connect With Us</h3>
+                <h3>Connect With Me</h3>
                 <p>Reach out through any of these channels</p>
               </div>
 
               <div className="detail-items">
-                <div className="detail-item">
-                  <div className="icon-wrapper">
-                    <Phone size={20} />
-                  </div>
-                  <div className="content">
-                    <span className="label">Call us at</span>
-                    <a href="tel:+40321654876" className="value">(+92) 321 7155090</a>
-                  </div>
-                </div>
+  <div className="detail-item">
+    <div className="icon-wrapper">
+      <Mail size={20} />
+    </div>
+    <div className="content">
+      <span className="label">Email me at</span>
+      <a href="mailto:contact@example.com" className="value">daudnasar16@gmail.com</a>
+    </div>
+  </div>
 
-                <div className="detail-item">
-                  <div className="icon-wrapper">
-                    <Mail size={20} />
-                  </div>
-                  <div className="content">
-                    <span className="label">Email us at</span>
-                    <a href="mailto:contact@example.com" className="value">daudnasar16@gmail.com</a>
-                  </div>
-                </div>
+  <div className="detail-item">
+    <div className="icon-wrapper">
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+      </a>
+      <FaLinkedin size={20} />
+    </div>
+    <div className="content">
+      <span className="label">Connect with me on</span>
+      <a href="https://www.linkedin.com/in/daud-bin-nasar" target="_blank" rel="noopener noreferrer" className="value">LinkedIn</a>
+    </div>
+  </div>
 
-                <div className="detail-item">
-                  <div className="icon-wrapper">
-                    <MapPin size={20} />
-                  </div>
-                  <div className="content">
-                    <span className="label">Visit us at</span>
-                    <span className="value">Chatta Rd, Chatta Bakhtawar, Islamabad</span>
-                  </div>
-                </div>
-              </div>
+  <div className="detail-item">
+    <div className="icon-wrapper">
+      <a href="https://github.com/rajadaud12" target="_blank" rel="noopener noreferrer">
+      </a>
+      <FaGithub size={20} />
+    </div>
+    <div className="content">
+      <span className="label">Check out my projects on</span>
+      <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="value">GitHub</a>
+    </div>
+  </div>
+</div>
+
 
               <div className="availability">
                 <div className="status-indicator"></div>
