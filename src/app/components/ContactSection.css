@@ -225,7 +225,7 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: var(--primary-color);
+  background: var(--input-bg);
   border-radius: 12px;
   color: var(--primary-color);
   transition: all 0.3s ease;
