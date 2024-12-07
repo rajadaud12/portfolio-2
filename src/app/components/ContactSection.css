@@ -272,8 +272,9 @@
 }
 
 .status-indicator {
-  width: 8px;
-  height: 8px;
+  width: 15px;
+  height: 12px;
+  margin: 5px;
   background: #22c55e;
   border-radius: 50%;
   position: relative;
