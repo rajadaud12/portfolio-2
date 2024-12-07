@@ -72,6 +72,13 @@
     font-weight: 500;
 }
 
+.navbar-item a:hover .icon,
+.navbar-item a.active .icon {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0px 0px 15px rgba(var(--primary-color-rgb), 0.6);
+    transform: scale(1.05);
+}
 
 
 /* Media Query for Mobile */
@@ -134,12 +141,5 @@
         opacity: 1;
     }
 
-    .navbar-item a:hover .icon,
-    .navbar-item a.active .icon {
-        background: var(--primary-color);
-        color: white;
-        box-shadow: 0px 0px 15px rgba(var(--primary-color-rgb), 0.6);
-        transform: scale(1.05);
-    }
-
+   
 }
