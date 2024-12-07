@@ -1,12 +1,12 @@
 .color-theme-switcher {
   position: fixed;
   top: 20px;
-  left: 24px; /* Position logo on the left */
-  right: 24px; /* Add space on the right for the toggler */
-  z-index: 1500;
+  left: 24px;
+  right: 24px;
+  z-index: 999; /* Reduced z-index */
   display: flex;
-  justify-content: space-between; /* Spread logo and toggler apart */
-  align-items: center; /* Vertically center logo and button */
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nameLogo {
