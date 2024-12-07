@@ -72,3 +72,13 @@ body {
     gap: 5px;
   }
 }
+
+
+
+
+@media (min-width: 768px) {
+  .section-heading-1, .section-heading-2 {
+    font-size: 22px; /* Further reduce font size for very small screens */
+    gap: 5px;
+  }
+}

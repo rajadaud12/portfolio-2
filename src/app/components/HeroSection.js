@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import { FaLinkedin, FaGithub, FaInstagram, FaDribbble } from 'react-icons/fa';
 import ProfileImage from '../images/dAY6.png';
-import Popup from './sub-components/Popup';
 import Image from "next/image";
 
 function HeroSection({ setIsPopupOpen }) {
@@ -11,8 +10,9 @@ function HeroSection({ setIsPopupOpen }) {
     const [text, setText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
-    const [typingSpeed, setTypingSpeed] = useState(200);
+    const [typingSpeed, setTypingSpeed] = useState(100);
     const [showCursor, setShowCursor] = useState(true);
+    const [isPaused, setIsPaused] = useState(false);
 
     const handlePopupOpen = () => {
         console.log('Popup open clicked');
@@ -27,45 +27,55 @@ function HeroSection({ setIsPopupOpen }) {
         });
     };
 
-    
-
     useEffect(() => {
-        // Ensure client-side rendering
         setIsMounted(true);
     }, []);
 
     useEffect(() => {
-        // Only run typing animation on client-side
         if (!isMounted) return;
+
+        // Pause logic
+        if (isPaused) {
+            const pauseTimer = setTimeout(() => {
+                setIsPaused(false);
+                setIsDeleting(true);
+            }, 500); // Very brief pause of 500ms
+            return () => clearTimeout(pauseTimer);
+        }
 
         const handleTyping = () => {
             const i = loopNum % roles.length;
             const fullText = roles[i];
 
             if (isDeleting) {
+                // Deleting phase
                 setText((prevText) => fullText.substring(0, prevText.length - 1));
-                setTypingSpeed(40);
+                setTypingSpeed(50);
+                
+                if (text === '') {
+                    // When text is fully deleted
+                    setIsDeleting(false);
+                    setLoopNum(prevNum => (prevNum + 1) % roles.length);
+                    setTypingSpeed(100);
+                }
             } else {
+                // Typing phase
                 setText((prevText) => fullText.substring(0, prevText.length + 1));
                 setTypingSpeed(100);
-            }
-
-            if (!isDeleting && text === fullText) {
-                setTimeout(() => setIsDeleting(true), 1000);
-            } else if (isDeleting && text === '') {
-                setIsDeleting(false);
-                setLoopNum(loopNum + 1);
+                
+                if (text === fullText) {
+                    // When full text is typed
+                    setIsPaused(true);
+                }
             }
         };
 
         const timer = setTimeout(handleTyping, typingSpeed);
-
         return () => clearTimeout(timer);
-    }, [text, isDeleting, typingSpeed, loopNum, roles, isMounted]);
+    }, [text, isDeleting, typingSpeed, loopNum, roles, isMounted, isPaused]);
 
     // Cursor blinking effect
     useEffect(() => {
-        // Only run cursor effect on client-side
         if (!isMounted) return;
 
         const cursorBlink = setInterval(() => {
@@ -86,11 +96,11 @@ function HeroSection({ setIsPopupOpen }) {
                 <h1>
                     Hi, It's <span className="highlight">Daud</span>
                 </h1>
-                <h2>
+                <h2 className="typing-container">
                     I'm a <span className="role">{text}<span className={`cursor ${showCursor ? 'show' : ''}`}>|</span></span>
                 </h2>
                 <p>
-                    I'm Daud bin Nasar, a developer adept at turning ideas into reality. With a passion for programming, I craft innovative software solutions with a creative touch.
+                    I'm Daud bin Nasar, a developer from <span className="country-highlight">Pakistan</span> adept at turning ideas into reality. With a passion for programming, I craft innovative software solutions with a creative touch.
                 </p>
                 <div className="social-icons">
                     <a href="https://www.linkedin.com/in/daud-bin-nasar" target="_blank" rel="noopener noreferrer">
@@ -118,7 +128,7 @@ function HeroSection({ setIsPopupOpen }) {
                     className="profile-image" 
                     width={500} 
                     height={500} 
-                    priority // Added to ensure early loading
+                    priority 
                 />
             </div>
         </div>

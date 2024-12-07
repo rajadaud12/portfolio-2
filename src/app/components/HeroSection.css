@@ -76,10 +76,7 @@
   transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.icon:hover {
-  box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
-  background-color: rgba(var(--primary-color), 0.3);
-}
+
 .hero-buttons {
   display: flex;
   gap: 10px;
@@ -112,15 +109,7 @@
   border: 2px solid var(--primary-color);
 }
 
-.btn:hover {
-  box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
-}
 
-.hire-btn:hover,
-.contact-btn:hover {
-  background-color: var(--primary-color);
-  color: #000;
-}
 
 .hero-image-container {
   position: relative;
@@ -156,17 +145,8 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.hero-image-container:hover {
-  background: var(--primary-color);
-  box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(var(--primary-color-rgb), 0.8);}
 
-.hero-image-container:hover::before {
-  background-color: rgba(var(--primary-color-rgb), 0.5);
-}
 
-.hero-image-container:hover .profile-image {
-  filter: brightness(0.8);
-}
 
 .name-logo {
   width: 110px;
@@ -269,8 +249,57 @@
     margin-bottom: 0px; 
   }
   
-
+  .typing-container {
+    min-height: 1.5em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .role {
+    display: inline-block;
+    min-height: 1.5em;
+    white-space: pre; /* Prevents text from wrapping */
+  }
+  
+  .cursor {
+    margin-left: 2px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .cursor.show {
+    opacity: 1;
+  }
  
 
  
+}
+
+
+
+@media (min-width:768px){
+  .icon:hover {
+    box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+    background-color: rgba(var(--primary-color), 0.3);
+  }
+  .hero-image-container:hover .profile-image {
+    filter: brightness(0.8);
+  }
+  .hero-image-container:hover {
+    background: var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color), 0 0 40px rgba(var(--primary-color-rgb), 0.8);}
+  
+  .hero-image-container:hover::before {
+    background-color: rgba(var(--primary-color-rgb), 0.5);
+  }
+  .btn:hover {
+    box-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+  }
+  
+  .hire-btn:hover,
+  .contact-btn:hover {
+    background-color: var(--primary-color);
+    color: #000;
+  }
+  
 }

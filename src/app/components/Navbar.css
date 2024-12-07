@@ -1,6 +1,6 @@
 .nav-container {
     position: fixed;
-    top: 50%; 
+    top: 50%;
     left: 20px;
     transform: translateY(-50%);
     z-index: 10;
@@ -9,7 +9,7 @@
 .navbar {
     background: var(--input-bg);
     backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);    
+    border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
 .navbar-links {
     list-style: none;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     padding: 0;
     margin: 0;
@@ -51,13 +51,7 @@
     transition: all 0.3s ease;
 }
 
-.navbar-item a:hover .icon,
-.navbar-item a.active .icon {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0px 0px 15px rgba(var(--primary-color-rgb), 0.6);
-    transform: scale(1.05);
-}
+
 
 .navbar-item a .tooltip {
     visibility: hidden;
@@ -78,10 +72,6 @@
     font-weight: 500;
 }
 
-.navbar-item a:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-}
 
 
 /* Media Query for Mobile */
@@ -93,23 +83,28 @@
         height: 50px;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%; /* Allow better responsiveness */
+        width: 100%;
+        /* Allow better responsiveness */
         max-width: 300px;
-        justify-content: center; /* Align center on mobile */
+        justify-content: center;
+        /* Align center on mobile */
         align-items: end;
     }
 
     .navbar {
-        flex-direction: row; /* Horizontal layout for mobile */
+        flex-direction: row;
+        /* Horizontal layout for mobile */
         padding: 8px 10px;
         height: 50px;
         border-radius: 50px;
-        width: 100%; /* Adjust to container width */
+        width: 100%;
+        /* Adjust to container width */
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     .navbar-links {
-        flex-direction: row; /* Horizontal layout for links */
+        flex-direction: row;
+        /* Horizontal layout for links */
         justify-content: center;
         width: 100%;
     }
@@ -127,4 +122,24 @@
         font-size: 16px;
         padding: 6px;
     }
+}
+
+
+
+@media (min-width:768px) {
+
+
+    .navbar-item a:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .navbar-item a:hover .icon,
+    .navbar-item a.active .icon {
+        background: var(--primary-color);
+        color: white;
+        box-shadow: 0px 0px 15px rgba(var(--primary-color-rgb), 0.6);
+        transform: scale(1.05);
+    }
+
 }

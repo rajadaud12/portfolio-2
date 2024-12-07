@@ -5,7 +5,7 @@ import {
   FaCss3Alt, 
   FaHtml5, 
   FaJava, 
-  FaJs
+  FaJs 
 } from 'react-icons/fa';
 import { 
   SiAdobexd, 
@@ -34,10 +34,17 @@ const ProjectCard = ({
   title,
   description,
   image,
-  techStack = []
+  techStack = [],
+  link
 }) => {
+
+  // Function to handle the click event and redirect to the link
+  const handleClick = () => {
+    window.open(link, "_blank");  // Opens the link in a new tab
+  };
+
   return (
-    <div className="project-card">
+    <div className="project-card" onClick={handleClick}>
       <div className="card-inner">
         <div className="card-image-container">
           <div className="card-image">
