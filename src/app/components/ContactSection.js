@@ -233,7 +233,7 @@ const handleSubmit = async (e) => {
 
   <div className="detail-item">
     <div className="icon-wrapper">
-      <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/daud-bin-nasar" target="_blank" rel="noopener noreferrer">
       </a>
       <FaLinkedin size={20} />
     </div>
@@ -251,7 +251,7 @@ const handleSubmit = async (e) => {
     </div>
     <div className="content">
       <span className="label">Check out my projects on</span>
-      <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="value">GitHub</a>
+      <a href="https://github.com/rajadaud12" target="_blank" rel="noopener noreferrer" className="value">GitHub</a>
     </div>
   </div>
 </div>
