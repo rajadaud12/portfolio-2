@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import { FaLinkedin, FaGithub, FaInstagram, FaDribbble } from 'react-icons/fa';
-import ProfileImage from '../images/MYpic.png';
+import ProfileImage from '../images/mypic.png';
 import Image from "next/image";
 
 function HeroSection({ setIsPopupOpen }) {
