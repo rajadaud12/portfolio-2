@@ -489,9 +489,7 @@
     flex-direction: column;
   }
 
-  .form-group {
-    max-width: 90%;
-  }
+ 
 }
 
 /* Status Messages */
