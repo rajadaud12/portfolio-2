@@ -248,19 +248,7 @@
     
     margin-bottom: 0px; 
   }
-  
-  .typing-container {
-    min-height: 1.5em;
-    display: flex;
-    align-items: center;
-  }
-  
-  .role {
-    display: inline-block;
-    min-height: 1.5em;
-    white-space: pre; /* Prevents text from wrapping */
-  }
-  
+
   .cursor {
     margin-left: 2px;
     opacity: 0;
