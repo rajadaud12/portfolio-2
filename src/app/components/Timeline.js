@@ -72,7 +72,7 @@ const Timeline = () => {
             <p>
                 COMSATS University Islamabad | Bachelor of Software Engineering
                 <br />
-                Currently pursuing a Bachelor's degree in Software Engineering with a CGPA of 3.73, focusing on developing strong programming and problem-solving skills.
+                Currently pursuing a Bachelor's degree in Software Engineering, focusing on developing strong programming and problem-solving skills.
             </p>
         </div>
     </div>
@@ -83,7 +83,7 @@ const Timeline = () => {
             <p>
                 Pak Kashmir Institute of Computer Sciences | ICS
                 <br />
-                Completed Intermediate studies with marks of 1037/1100, focusing on computer science subjects that solidified my technical foundation.
+                Completed Intermediate studies, focusing on computer science subjects that solidified my technical foundation.
             </p>
         </div>
     </div>
@@ -94,8 +94,8 @@ const Timeline = () => {
             <p>
                 Pak Kashmir Institute of Computer Sciences | Matriculation
                 <br />
-                Achieved marks of 1024/1100, laying the groundwork for my future in technology and academic success.
-            </p>
+                Excelled academically, establishing a strong foundation for my future endeavors in technology and education.
+</p>
         </div>
     </div>
 </div>
