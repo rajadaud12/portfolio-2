@@ -10,8 +10,19 @@ import image6 from "../images/Chess.png"
 import image7 from "../images/Thumb 7.1.png"
 import image8 from "../images/Tenzies.png"
 import image9 from "../images/DigitalBites.png"
+import image10 from "../images/talesic.png"
 
 const projectsData = [
+  {
+    image: image10,
+    title: 'Talesic UI: Where Stories Come Alive',
+    date: 'Jun 2023 - Jul 2023',
+    description: 'Presenting the UI of Talesic, a platform designed for writers to create and manage their stories.',
+    techStack: ["figma", "adobe xd"],
+    category: "web",
+    isDesign: true,
+    link: 'https://dribbble.com/shots/25516770-Talesic-Crafting-Stories-Redefining-Creativity'
+  },
     {
       image: image3,
       title: 'Sekiro Characters App UI',
