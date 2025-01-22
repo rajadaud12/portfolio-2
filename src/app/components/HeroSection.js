@@ -183,11 +183,9 @@ const HeroSection = ({ setIsPopupOpen }) => {
           <div className="cta-group">
             <button onClick={handlePopupOpen} className="primary-btn">
               About Me
-              <ArrowRight size={16} />
             </button>
             <button onClick={handleScrollToContact} className="secondary-btn">
               Let's Connect
-              <ArrowRight size={16} />
             </button>
           </div>
         </div>
