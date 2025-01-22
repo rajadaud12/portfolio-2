@@ -136,14 +136,14 @@ const HeroSection = ({ setIsPopupOpen }) => {
             <div className="stat-item">
               <Globe className="stat-icon" />
               <div className="stat-content">
-                <span className="stat-number">100+</span>
+                <span className="stat-number">30+</span>
                 <span className="stat-label">Projects Delivered</span>
               </div>
             </div>
             <div className="stat-item">
               <Database className="stat-icon" />
               <div className="stat-content">
-                <span className="stat-number">50k+</span>
+                <span className="stat-number">30k+</span>
                 <span className="stat-label">Lines of Code</span>
               </div>
             </div>
@@ -151,7 +151,7 @@ const HeroSection = ({ setIsPopupOpen }) => {
               <Coffee className="stat-icon" />
               <div className="stat-content">
                 <span className="stat-number">∞</span>
-                <span className="stat-label">Cups of Coffee</span>
+                <span className="stat-label">Cups of Tea</span>
               </div>
             </div>
           </div>
