@@ -20,6 +20,7 @@
   display: inline-flex;
   align-items: center;
   min-width: 200px;
+  justify-content: center;
 }
 
 .typing-cursor {
@@ -63,6 +64,7 @@
 .tech-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: rgba(0, 216, 255, 0.1);
   border: 1px solid rgba(0, 216, 255, 0.2);
@@ -73,6 +75,7 @@
   margin-bottom: 24px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .tech-badge:hover {
@@ -673,6 +676,7 @@
 
   .typing-container {
     min-width: 160px;
+    
   }
 
   /* Tech stack adjustments */
