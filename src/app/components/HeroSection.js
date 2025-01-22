@@ -118,20 +118,7 @@ const HeroSection = ({ setIsPopupOpen }) => {
           </h1>
 
 
-          <div className="tech-stack">
-            <div className="stack-item">
-              <Terminal size={20} className="stack-icon" />
-              <span>Development</span>
-            </div>
-            <div className="stack-item">
-              <Palette size={20} className="stack-icon" />
-              <span>Design</span>
-            </div>
-            <div className="stack-item">
-              <Code size={20} className="stack-icon" />
-              <span>Architecture</span>
-            </div>
-          </div>
+          
 
           <div className="stats-grid">
             <div className="stat-item">
