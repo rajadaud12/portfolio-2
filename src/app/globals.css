@@ -2,9 +2,12 @@
 
 body {
   margin: 0;
+  
   background: linear-gradient(90deg, #040809, #040C10, #041016);
   font-family: 'Montserrat', sans-serif; /* Apply the programming font */
 }
+
+
 
 
 
@@ -41,6 +44,11 @@ body {
   color: var(--primary-color);
   text-shadow: 0 0 25px rgba(var(--primary-color-rgb), 0.6);
 }
+
+button{
+  cursor: pointer;
+}
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
