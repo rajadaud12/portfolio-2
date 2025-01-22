@@ -1,4 +1,5 @@
 .background-canvas {
+
     position: fixed;
     top: 0;
     left: 0;
@@ -6,6 +7,6 @@
     height: 100%;
     z-index: -9999999;
     pointer-events: none;
-    background: transparent; /* Ensure no background color */
+    background: transparent;
   }
   
