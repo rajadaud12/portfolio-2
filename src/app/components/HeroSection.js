@@ -113,7 +113,7 @@ const HeroSection = ({ setIsPopupOpen }) => {
             <span className="title-top">Hello, I'm</span>
             <span className="title-main">
               Daud Bin Nasar <br />
-              <span className="gradient-text">Crafting Digital Stories</span>
+              <span className="gradient-text">Building Dreams</span>
             </span>
           </h1>
 
