@@ -31,10 +31,11 @@ const HeroSection = ({ setIsPopupOpen }) => {
 
   const handleScrollToContact = useCallback(() => {
     window.scrollTo({
-      top: document.body.scrollHeight,
+      top: document.documentElement.scrollHeight - window.innerHeight - 150, // 100 is the offset above the bottom
       behavior: 'smooth',
     });
   }, []);
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(

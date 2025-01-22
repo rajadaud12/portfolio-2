@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
 import './ContactSection.css'
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub,FaDribbble } from 'react-icons/fa';
 
 const ContactSection = () => {
   // Form state to track input values
@@ -253,6 +253,19 @@ const handleSubmit = async (e) => {
       <span className="label">Check out my projects on</span>
       <a href="https://github.com/rajadaud12" target="_blank" rel="noopener noreferrer" className="value">GitHub</a>
     </div>
+    
+  </div>
+  <div className="detail-item">
+    <div className="icon-wrapper">
+      <a href="https://dribbble.com/daudnasar" target="_blank" rel="noopener noreferrer">
+      </a>
+      <FaDribbble size={20} />
+    </div>
+    <div className="content">
+      <span className="label">Check out my designs on</span>
+      <a href="https://dribbble.com/daudnasar" target="_blank" rel="noopener noreferrer" className="value">Dribbble</a>
+    </div>
+    
   </div>
 </div>
 

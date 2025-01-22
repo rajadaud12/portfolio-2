@@ -27,7 +27,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 100px 120px;
+  padding: 150px 120px;
   color: var(--text-primary);
   position: relative;
   overflow: hidden;
@@ -83,7 +83,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
 }
 
 .form-group {

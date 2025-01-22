@@ -62,7 +62,7 @@ function Navbar({ activeSection }) {
             to="messages"
             smooth={true}
             duration={500}
-            offset={-70}
+            offset={40}
             className={`navbar-link ${activeSection === 'messages' ? 'active' : ''}`}
           >
             <FaCommentDots className="icon" />
