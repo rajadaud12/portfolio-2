@@ -3,8 +3,8 @@
   overflow: hidden;
   padding: 0 40px;
   display: flex;
-  justify-content: center;
   opacity: 0;
+  max-height: 105vh ;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -72,7 +72,6 @@
   border-radius: 100px;
   color: var(--primary-color);
   font-size: 14px;
-  margin-bottom: 24px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
   text-align: center;
