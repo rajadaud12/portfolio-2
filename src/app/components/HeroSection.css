@@ -4,7 +4,6 @@
   padding: 0 40px;
   display: flex;
   opacity: 0;
-  max-height: 105vh ;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -47,7 +46,7 @@
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 0;
+  padding: 40px 0;
   display: flex;
   align-items: center;
   gap:60px;
