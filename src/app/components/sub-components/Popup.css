@@ -196,8 +196,9 @@
         padding: 10px;
     }
 
-    .primary-btn{
+    .popup-overlay .primary-btn{
         max-width: 200px;
+        max-height: 100px;
     }
     .popup-left h2, .popup-right h2 {
         font-size: 18px;
