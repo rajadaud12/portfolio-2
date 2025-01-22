@@ -68,11 +68,11 @@ const HeroSection = ({ setIsPopupOpen }) => {
 
     const type = () => {
       const currentText = roles[roleIndex];
-      
+
       if (!isDeleting) {
         setCurrentRole(currentText.substring(0, charIndex + 1));
         charIndex++;
-        
+
         if (charIndex === currentText.length) {
           isDeleting = true;
           timeout = setTimeout(type, 2000);
@@ -81,13 +81,13 @@ const HeroSection = ({ setIsPopupOpen }) => {
       } else {
         setCurrentRole(currentText.substring(0, charIndex));
         charIndex--;
-        
+
         if (charIndex === 0) {
           isDeleting = false;
           roleIndex = (roleIndex + 1) % roles.length;
         }
       }
-      
+
       timeout = setTimeout(type, isDeleting ? 50 : 100);
     };
 
@@ -97,7 +97,7 @@ const HeroSection = ({ setIsPopupOpen }) => {
 
   return (
     <div className={`hero-container ${isInView ? 'fade-in' : ''}`}>
-      
+
 
       <div className="hero-content">
         <div className="hero-left">
@@ -110,12 +110,13 @@ const HeroSection = ({ setIsPopupOpen }) => {
           </div>
 
           <h1 className="hero-title">
-            <span className="title-top">Transforming</span>
+            <span className="title-top">Hello, I'm</span>
             <span className="title-main">
-              Ideas Into <br />
-              <span className="gradient-text">Digital Reality</span>
+              Daud Bin Nasar <br />
+              <span className="gradient-text">Crafting Digital Stories</span>
             </span>
           </h1>
+
 
           <div className="tech-stack">
             <div className="stack-item">
@@ -197,10 +198,10 @@ const HeroSection = ({ setIsPopupOpen }) => {
               <div className="frame-decoration right" />
               <div className="frame-decoration bottom" />
               <div className="frame-decoration left" />
-              
+
               <div className="profile-wrapper">
                 <div className="profile-background" />
-                <Image 
+                <Image
                   src={ProfileImage}
                   alt="Developer Profile"
                   width={400}
