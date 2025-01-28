@@ -1,7 +1,7 @@
 /* General styles */
 .timeline-section {
     padding: 40px 20px;
-    color: #fff;
+    color: #f8fafc;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
     bottom: 0;
     left: 50%;
     width: 2px;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
     transform: translateX(-50%);
 }
 
@@ -47,8 +47,8 @@
     width: 50%;
     padding: 20px;
     box-sizing: border-box;
-    opacity: 0; /* Hidden initially */
-    transform: translateY(20px); /* Slide-in effect */
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -65,10 +65,10 @@
 }
 
 .timeline-item .timeline-content {
-    background: var(--input-bg);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border-color);
-    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
     padding: 30px;
     max-width: 800px;
     transition: all 0.3s ease;
@@ -80,10 +80,20 @@
     top: 50%;
     width: 12px;
     height: 12px;
-    background: var(--primary-color);
+    background: #3b82f6;
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--primary-color);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
     transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(2):before {
+    background: #8b5cf6;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.timeline-item:nth-child(3):before {
+    background: #ec4899;
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
 }
 
 .timeline-item:nth-child(odd):before {
@@ -99,7 +109,10 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 1rem;
-    color: var(--primary-color);
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .timeline-item:nth-child(odd) .year {
@@ -113,25 +126,25 @@
 .timeline-item h4 {
     margin: 0 0 10px;
     font-size: 1.25rem;
-    color: var(--primary-color);
+    color: #f8fafc;
 }
 
 .timeline-item p {
     margin: 0;
     font-size: 0.875rem;
-    color: #ccc;
+    color: #94a3b8;
 }
 
 /* Hover effects */
 .timeline-item:hover .timeline-content {
-    box-shadow: 0 0 20px rgba(var(--primary-color-rgb), 0.6);
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
 }
 
 .timeline-item:hover:before {
     width: 18px;
     height: 18px;
-    box-shadow: 0 0 20px var(--primary-color);
 }
 
 /* Responsive adjustments */
@@ -140,6 +153,7 @@
         padding: 0 !important;
         margin: 0 !important;
     }
+    
     .timeline-section {
         padding: 20px 20px;
     }    
@@ -157,8 +171,8 @@
         left: 0 !important;
         padding-left: 40px !important;
         position: relative !important;
-        transform: none !important; /* Reset slide-in effect */
-        opacity: 1 !important; /* Reset initial opacity */
+        transform: none !important;
+        opacity: 1 !important;
     }
 
     .timeline-item:nth-child(odd),
@@ -177,28 +191,30 @@
         left: 40px !important;
         top: 5px !important;
         font-size: 1rem !important;
-        color: var(--primary-color) !important;
+    }
+
+
+    .timeline-item:nth-child(even) .year {
+        right: 40px !important;
+        top: 5px !important;
+        font-size: 1rem !important;
     }
 
     .timeline-item .timeline-content {
         margin-left: 55px !important;
         margin-top: 10px !important;
         padding: 20px !important;
-        border-radius: 50px !important;
+        border-radius: 24px !important;
         font-size: 0.875rem !important;
-        box-shadow: none !important;
-        transform: none !important;
     }
 
     .timeline-item:hover .timeline-content {
-        box-shadow: none !important;
         transform: none !important;
     }
 
     .timeline-item:hover:before {
         width: 12px !important;
         height: 12px !important;
-        box-shadow: none !important;
     }
 
     .timeline-item h4 {
@@ -208,12 +224,33 @@
 
     .timeline-item p {
         font-size: 0.75rem !important;
-        color: #ccc !important;
     }
 }
 
+/* Section heading styles */
+.headings-container {
+    margin-bottom: 40px;
+}
 
-/* Keyframes for animations */
+.section-heading-1,
+.section-heading-2 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-heading-1 {
+    color: #94a3b8;
+}
+
+.section-heading-2 {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }

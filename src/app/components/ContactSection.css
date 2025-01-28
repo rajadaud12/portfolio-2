@@ -1,36 +1,44 @@
 
+/* Base Layout */
 :root {
-  /* Color Palette */
-  
-  /* Text Colors */
-  --text-primary: #fff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  
+  --primary-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
   --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.03);
   --input-bg: rgba(255, 255, 255, 0.03);
+  --blue-primary: #3b82f6;
+  --blue-light: #60a5fa;
+
   
-  --spacing-xs: 8px;
-  --spacing-sm: 12px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 40px;
-  --spacing-xxl: 60px;
+  /* Add responsive spacing variables */
+  --section-padding-desktop: 120px 24px;
+  --section-padding-tablet: 80px 24px;
+  --section-padding-mobile: 60px 16px;
 }
 
-.contact-section-container * {
-  box-sizing: border-box;
+
+
+.contact-section-container  {
   margin: 0;
   padding: 0;
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+
+.contact-section-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .contact-section {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 150px 120px;
-  color: var(--text-primary);
-  position: relative;
-  overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
 }
 
 /* Responsive Grid Layout */
@@ -39,6 +47,7 @@
   margin: 0 auto;
   margin-top: 50px;
   position: relative;
+
 }
 
 .contact-content {
@@ -62,70 +71,70 @@
 }
 
 .contact-header h2 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 16px;
   line-height: 1.2;
-  background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.7));
+  background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .contact-header p {
   font-size: 18px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  max-width: 500px;
+    line-height: 1.6;
+    color: var(--text-secondary);
 }
 
 /* Form Styles */
 .form-row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .form-group {
   position: relative;
-  margin-bottom: var(--spacing-lg);
+    margin-bottom: 24px;
 }
 
 .form-group label {
   display: block;
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-xs);
-  transition: all 0.3s ease;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
 }
 
 .form-group.focused label {
-  color: var(--primary-color);
+  color: var(--blue-light);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: var(--spacing-md);
+  padding: 16px;
   background: var(--input-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 12px;
   color: var(--text-primary);
   font-size: 16px;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group textarea {
-  resize: none;
   min-height: 120px;
+  resize: none;
 }
 
-/* Input Focus and Error States */
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--primary-color);
+  border-color: var(--blue-primary);
+  background: rgba(59, 130, 246, 0.1);
 }
 
 .form-group.error input,
@@ -139,26 +148,36 @@
   margin-top: 5px;
 }
 
-/* Submit Button */
-.submit-button {
+ /* Submit Button */
+ .submit-button {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md) var(--spacing-xl);
-  background: var(--primary-color);
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--primary-gradient);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 20px;
+
 }
+
 
 .submit-button:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.submit-button .button-icon {
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .button-icon {
+  transform: translateX(4px);
 }
 
 .submit-button .button-icon {
@@ -174,15 +193,19 @@
   cursor: not-allowed;
 }
 
-/* Contact Details */
+/* Contact Details Card */
 .contact-details {
-  padding: var(--spacing-xl);
-  border-radius: 16px;
+  padding: 32px;
+  border-radius: 24px;
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  background: var(--input-bg);
   backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
 }
 
+.contact-details:hover {
+  transform: translateY(-5px);
+}
 .contact-info-header {
   margin-bottom: var(--spacing-xl);
 }
@@ -198,6 +221,24 @@
   font-size: 16px;
 }
 
+.contact-info-header {
+  margin-bottom: 32px;
+}
+
+.contact-info-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-info-header p {
+  color: var(--text-secondary);
+}
+
+
 .detail-items {
   display: flex;
   flex-direction: column;
@@ -205,17 +246,26 @@
   margin-bottom: var(--spacing-xl);
 }
 
+./* Contact Detail Items */
+.detail-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
 .detail-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-md);
+  gap: 16px;
+  padding: 16px;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .detail-item:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateX(5px);
 }
 
 .icon-wrapper {
@@ -224,27 +274,26 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: var(--input-bg);
+  background: rgba(59, 130, 246, 0.1);
   border-radius: 12px;
-  color: var(--primary-color);
+  color: var(--blue-light);
   transition: all 0.3s ease;
 }
 
 .detail-item:hover .icon-wrapper {
-  background: var(--primary-color);
+  background: var(--primary-gradient);
   color: white;
-  transform: scale(1.05);
 }
 
 .detail-item .content {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 }
 
 .detail-item .label {
   font-size: 14px;
   color: var(--text-secondary);
-  margin-bottom: 4px;
 }
 
 .detail-item .value {
@@ -255,23 +304,22 @@
 }
 
 .detail-item a.value:hover {
-  color: var(--primary-color);
+  color: var(--blue-light);
 }
 
-/* Availability */
+/* Availability Status */
 .availability {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md);
-  background: rgba(255, 255, 255, 0.03);
+  gap: 12px;
+  padding: 16px;
+  background: rgba(59, 130, 246, 0.1);
   border-radius: 12px;
 }
 
 .status-indicator {
-  width: 15px;
-  height: 12px;
-  margin: 5px;
+  width: 12px;
+  height: 11px;
   background: #22c55e;
   border-radius: 50%;
   position: relative;
@@ -288,20 +336,37 @@
 }
 
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1);
     opacity: 0.8;
   }
-  70% {
-    transform: scale(2);
-    opacity: 0;
-  }
-  100% {
+  50% {
     transform: scale(2);
     opacity: 0;
   }
 }
 
+/* Status Messages */
+.success-message,
+.error-message {
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.success-message {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
 /* Responsive Breakpoints */
 /* Small Tablets and Large Phones */
 @media (min-width: 640px) {
@@ -334,7 +399,8 @@
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 0 !important;
+
   }
 
   .submit-button {
@@ -486,6 +552,7 @@
   .form-row {
     display: flex;
     flex-direction: column;
+    gap: 0 !important;
   }
 
  

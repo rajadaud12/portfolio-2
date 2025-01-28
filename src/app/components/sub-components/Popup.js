@@ -43,10 +43,7 @@ function Popup({ isOpen, onClose }) {
                             <span>UI/UX Design <span className="percentage">90%</span></span>
                             <div className="bar"><div className="progress" data-width="90"></div></div>
                         </div>
-                        <div className="skill-bar">
-                            <span>Graphic Design <span className="percentage">80%</span></span>
-                            <div className="bar"><div className="progress" data-width="80"></div></div>
-                        </div>
+                       
                     </div>
                 </div>
                 <div className="popup-bottom">

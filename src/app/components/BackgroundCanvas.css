@@ -8,5 +8,6 @@
     z-index: -9999999;
     pointer-events: none;
     background: transparent;
+    display: none;
   }
   

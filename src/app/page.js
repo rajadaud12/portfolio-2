@@ -10,6 +10,7 @@ import BackgroundCanvas from './components/BackgroundCanvas';
 import Navbar from './components/Navbar';
 import Popup from './components/sub-components/Popup';
 import ContactSection from './components/ContactSection';
+import BackgroundOrbs from './components/BackgroundOrbs';
 
 // Dynamically load react-scroll's Element
 const Element = dynamic(() => import('react-scroll').then((mod) => mod.Element), { ssr: false });
@@ -78,9 +79,8 @@ function Home() {
   }
 
   return (
-    <div className="App">
-      <ColorThemeSwitcher />
-      <BackgroundCanvas />
+    <div className="App relative">
+      <BackgroundOrbs/>
       <Navbar activeSection={activeSection} />
 
       <div id="home" ref={homeRef}>

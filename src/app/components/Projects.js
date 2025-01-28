@@ -11,6 +11,7 @@ import image7 from "../images/Thumb 7.1.png"
 import image8 from "../images/Tenzies.png"
 import image9 from "../images/DigitalBites.png"
 import image10 from "../images/talesic.png"
+import image11 from "../images/taxi.png"
 
 const projectsData = [
   {
@@ -66,6 +67,17 @@ const projectsData = [
       isDev: true,
       link: 'https://dribbble.com/shots/25234292-Digital-Bites-AR-Food-Menu-Design?utm_source=Clipboard_Shot&utm_campaign=daudnasar&utm_content=Digital%20Bites%20-%20AR%20Food%20Menu%20Design%20%F0%9F%8D%94%F0%9F%93%B1&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=daudnasar&utm_content=Digital%20Bites%20-%20AR%20Food%20Menu%20Design%20%F0%9F%8D%94%F0%9F%93%B1&utm_medium=Social_Share',
       devLink: 'https://github.com/rajadaud12/DigitalBitesApp',
+    },
+
+    {
+      image: image11,
+      title: 'Taxing Booking App',
+      date: 'Oct 2022 - Present',
+      description: 'A taxi booking mobile application with ride tracking through map and chatting functionality',
+      techStack: ["flutter"],
+      category: "mobile",
+      isDev: true,
+      devLink: 'https://www.linkedin.com/posts/daud-bin-nasar_flutter-taxibooking-mobileappdevelopment-activity-7289738595664367618-xP9D?utm_source=share&utm_medium=member_desktop',
     },
     {
       image: image4,
