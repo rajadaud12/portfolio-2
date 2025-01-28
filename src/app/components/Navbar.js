@@ -1,7 +1,7 @@
 // Navbar.js
 import React from 'react';
 import { Link } from 'react-scroll';
-import { FaHome, FaUniversity, FaChartBar, FaBriefcase, FaCommentDots, FaRProject } from 'react-icons/fa';
+import { FaHome, FaUniversity, FaBriefcase, FaCommentDots,FaPaintBrush } from 'react-icons/fa';
 import './Navbar.css';
 
 function Navbar({ activeSection }) {
@@ -53,7 +53,7 @@ function Navbar({ activeSection }) {
             offset={-70}
             className={`navbar-link ${activeSection === 'work' ? 'active' : ''}`}
           >
-            <FaRProject className="icon" />
+            <FaPaintBrush className="icon" />
             <span className="tooltip">Designs</span>
           </Link>
         </li>
