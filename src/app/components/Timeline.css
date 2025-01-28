@@ -227,28 +227,6 @@
     }
 }
 
-/* Section heading styles */
-.headings-container {
-    margin-bottom: 40px;
-}
-
-.section-heading-1,
-.section-heading-2 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-.section-heading-1 {
-    color: #94a3b8;
-}
-
-.section-heading-2 {
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
 
 /* Animations */
 @keyframes fadeIn {
