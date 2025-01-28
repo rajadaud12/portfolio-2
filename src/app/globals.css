@@ -22,6 +22,8 @@ body {
 /* Section heading styles */
 .headings-container {
   margin-bottom: 40px;
+  display: flex;
+  gap: 10px;
 }
 
 .section-heading-1,
@@ -40,7 +42,10 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 0 25px rgba(var(--primary-color-rgb), 0.6);
+
 }
+
 button{
   cursor: pointer;
   border: none;

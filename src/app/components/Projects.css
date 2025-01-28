@@ -21,11 +21,7 @@
   visibility: visible;
 }
 
-.headings-container {
-  margin-bottom: 30px;
-  width: 100%;
-  padding: 0 20px;
-}
+
 
 .filter-container {
   background: var(--input-bg);
