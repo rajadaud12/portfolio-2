@@ -25,6 +25,7 @@
   opacity: 1;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  overflow: hidden;
 }
 
 
@@ -162,7 +163,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: 20px;
+      margin-bottom: 20px;
 
 }
 
@@ -246,7 +247,6 @@
   margin-bottom: var(--spacing-xl);
 }
 
-./* Contact Detail Items */
 .detail-items {
   display: flex;
   flex-direction: column;
